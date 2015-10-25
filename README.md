@@ -3,8 +3,10 @@ A auto deploy  ss to digital ocean vps.
 
 # 使用说明
 
-你需要准备一台DO的VPS
-假定你使用的Mac OSX，如果是Linux，请自行替换shadowsocks-local为Linux的版本，这里是go版本的。
+- 你需要准备一台DO的VPS
+- 假定你使用的Mac OSX，如果是Linux，请自行替换shadowsocks-local为Linux的版本，这里是go版本的。
+- 假定你装好了ruby, gem的环境。
+
 
 部署一个SSH的key到服务器上。
 
@@ -17,6 +19,19 @@ curl -X GET -H 'Content-Type: application/json' -H 'Authorization: Bearer b7d03a
 ```
 
 获得SSH Key的Id
+
+# 配置
+
+克隆项目到本地
+
+```bash
+git clone git@github.com:jimrok/do_ss.git
+```
+安装mina
+
+```bash
+bundle install
+```
 
 修改droplet.rb文件
 
