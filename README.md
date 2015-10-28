@@ -6,16 +6,12 @@ A auto deploy  ss to digital ocean vps.
 - 你需要准备一台DO的VPS
 - 假定你使用的Mac OSX，如果是Linux，请自行替换shadowsocks-local为Linux的版本，这里是go版本的。
 - 假定你装好了ruby, gem的环境。
+- 部署一个SSH的key到服务器上。
+- 获得API的Token
 
-
-部署一个SSH的key到服务器上。
-
-获得API的Token
-
-执行
+执行,其中b7d03a6947b217efb6f3ec3bd3504582，更换为你的Token。
 ```bash
 curl -X GET -H 'Content-Type: application/json' -H 'Authorization: Bearer b7d03a6947b217efb6f3ec3bd3504582' "https://api.digitalocean.com/v2/account/keys"
-
 ```
 
 获得SSH Key的Id
@@ -53,7 +49,7 @@ SSH_KEY_ID = 1203333 # 查你的SSH Key 的ID，执行curl -X GET -H 'Content-Ty
 mina setup
 
 ```
-部署完成后执行
+部署完成后执行,默认打开了一个socks5的本地服务，端口1080, 如果使用chrome，配置一个Proxy SwitchyOmega进行自动切换。
 
 ```bash
 ./shadowsocks-local -c config.json
